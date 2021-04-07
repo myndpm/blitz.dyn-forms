@@ -12,13 +12,6 @@ header .github-button {
   line-height: 26px;
   margin-left: 8px;
 
-  &.star {
-    padding: 0 4px;
-  }
-  &.discussions {
-    padding: 0 24px 0 8px;
-  }
-
   .mat-icon {
     font-size: 18px;
     height: 16px;
@@ -26,6 +19,17 @@ header .github-button {
 
     line-height: 14px;
     margin-right: 2px;
+  }
+
+  &.star {
+    padding: 0 4px 0 0;
+  }
+  &.discussions {
+    padding: 0 10px 0 8px;
+
+    .mat-icon {
+      font-size: 16px;
+    }
   }
 }
 
@@ -37,4 +41,5 @@ footer .mat-toolbar {
   font-size: 80%;
   height: 42px;
   line-height: 42px;
+  padding-left: 10px;
 }

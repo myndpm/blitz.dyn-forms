@@ -3,12 +3,14 @@
 .form-actions {
   margin-top: 1em;
   > * {
+    margin-left: 8px;
     margin-right: 12px;
   }
 }
 
 ::ng-deep {
   .mat-card {
+    border-radius: 0 !important; // makes more sense in xs
     margin-bottom: 0.5em;
   }
 
@@ -16,7 +18,7 @@
     display: block;
     // equalize to mat-form-field(outline)
     margin: 0.25em 0;
-    padding: 1.40em 0 2.09em;
+    padding: 1.40em 0.5em 2.09em;
   }
 
   .array-item {
