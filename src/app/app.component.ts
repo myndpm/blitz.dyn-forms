@@ -1,6 +1,7 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
-import { simpleForm } from './simple.form';
+import { DynFormComponent } from '@myndpm/dyn-forms';
+import { simpleData, simpleForm } from './simple.form';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,12 @@ export class AppComponent  {
   form = new FormGroup({});
   mode = 'edit';
 
+  @ViewChild(DynFormComponent, { static: true })
+  dynForm!: DynFormComponent;
+
   loadData(): void {
+    // we can load data AfterViewInit
+    this.dynForm.patchValue(simpleData);
   }
 
   toggleMode(): void {

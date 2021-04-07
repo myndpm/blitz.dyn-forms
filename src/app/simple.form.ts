@@ -2,6 +2,28 @@ import { Validators } from '@angular/forms';
 import { createConfig, DynMatRadioParams, DynMatSelectParams } from '@myndpm/dyn-forms/material';
 import { DynFormConfig } from '@myndpm/dyn-forms';
 
+export const simpleData = {
+  billing: {
+    firstName: 'Mynd',
+    lastName: 'Management',
+    address1: '1611 Telegraph Ave',
+    address2: 'Suite 1200',
+    country: 'US',
+    zipCode: '94612',
+  },
+  account: 'GUEST',
+  products: [
+    {
+      product: 'Product 1',
+      quantity: 8,
+    },
+    {
+      product: 'Product 2',
+      quantity: 4,
+    },
+  ]
+};
+
 export const simpleForm: DynFormConfig<'display'> = { // typed mode
   modeParams: {
     display: { readonly: true },
