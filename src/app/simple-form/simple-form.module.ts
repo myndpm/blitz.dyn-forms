@@ -8,7 +8,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
 import { DynFormsModule } from '@myndpm/dyn-forms';
-import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
+// OUTSIDE STACKBLITZ USE THIS
+// import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
+// STACKBLITZ ONLY
+import { DynFormsMaterialModule } from '../dyn-mat-forms.proxy';
 import { SimpleComponent } from './simple.component';
 
 const routes: Routes = [
