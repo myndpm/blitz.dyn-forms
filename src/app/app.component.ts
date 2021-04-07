@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { simpleForm } from './simple.form';
 
 @Component({
@@ -19,5 +19,24 @@ export class AppComponent  {
   }
 
   toggleMode(): void {
+    this.mode = (this.mode === 'edit') ? 'display' : 'edit';
+
+    if (this.mode === 'display') {
+      // reset invalid styles on display markAllAsPristine
+      this.markAsUntouched(this.form);
+    }
+  }
+
+  private markAsUntouched(group: FormGroup | FormArray): void {
+    group.markAsUntouched();
+
+    Object.keys(group.controls).map((field) => {
+      const control = group.get(field);
+      if (control instanceof FormControl) {
+        control.markAsUntouched();
+      } else if (control instanceof FormGroup) {
+        this.markAsUntouched(control);
+      }
+    });
   }
 }
