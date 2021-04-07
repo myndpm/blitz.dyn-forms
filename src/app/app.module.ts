@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     DynFormsMaterialModule.forFeature(),
   ],
