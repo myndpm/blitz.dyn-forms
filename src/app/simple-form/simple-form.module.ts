@@ -7,11 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
-import { DynFormsModule } from '@myndpm/dyn-forms';
-// OUTSIDE STACKBLITZ USE THIS
-// import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
-// STACKBLITZ ONLY
-import { DynFormsMaterialModule } from '../dyn-mat-forms.proxy';
+import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
 import { SimpleComponent } from './simple.component';
 
 const routes: Routes = [
@@ -31,7 +27,7 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    DynFormsModule,
+    DynFormsMaterialModule, // STACKBLITZ ONLY
     DynFormsMaterialModule.forFeature(),
     MatButtonModule,
     MatIconModule,
