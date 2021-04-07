@@ -1,3 +1,22 @@
-p {
-  font-family: Lato;
+/* Layout */
+
+:host div {
+  min-height: 100%;
+  width: 100%;
 }
+
+main {
+  padding: 42px 0;
+
+  .form-actions > * {
+    margin-right: 12px;
+  }
+}
+
+footer .mat-toolbar {
+  font-size: 80%;
+  height: 42px;
+  line-height: 42px;
+}
+
+/* Form */

@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+  ngVersion = 'Angular ' + VERSION.full;
+
+  form = new FormGroup({});
+  mode = 'edit';
+
+  loadData(): void {
+  }
+
+  toggleMode(): void {
+  }
 }
