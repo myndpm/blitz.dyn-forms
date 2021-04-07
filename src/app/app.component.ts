@@ -1,4 +1,4 @@
-import { Component, VERSION, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, VERSION, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { DynFormComponent } from '@myndpm/dyn-forms';
 import { simpleData, simpleForm } from './simple.form';
@@ -8,7 +8,7 @@ import { simpleData, simpleForm } from './simple.form';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
+export class AppComponent implements AfterViewInit {
   ngVersion = 'Angular ' + VERSION.full;
 
   // dyn-form inputs
@@ -18,6 +18,11 @@ export class AppComponent  {
 
   @ViewChild(DynFormComponent, { static: true })
   dynForm!: DynFormComponent;
+
+  ngAfterViewInit(): void {
+    // logs each debounced change in the console just to demo
+    this.dynForm.valueChanges().subscribe(console.log);
+  }
 
   loadData(): void {
     // we can load data AfterViewInit
