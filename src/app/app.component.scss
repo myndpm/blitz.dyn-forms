@@ -8,8 +8,11 @@
 main {
   padding: 42px 0;
 
-  .form-actions > * {
-    margin-right: 12px;
+  .form-actions {
+    margin-top: 1em;
+    > * {
+      margin-right: 12px;
+    }
   }
 }
 
@@ -20,3 +23,26 @@ footer .mat-toolbar {
 }
 
 /* Form */
+::ng-deep {
+  .mat-card {
+    margin-bottom: 0.5em;
+  }
+
+  .mat-radio-group {
+    display: block;
+    // equalize to mat-form-field(outline)
+    margin: 0.25em 0;
+    padding: 1.40em 0 2.09em;
+  }
+
+  .array-item {
+    position: relative
+
+    // let the bootstrap row to use 100%
+    button {
+      position: absolute;
+      right: 0;
+      top: 8px;
+    }
+  }
+}
