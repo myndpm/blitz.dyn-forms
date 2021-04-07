@@ -1,5 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { simpleForm } from './simple.form';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { FormGroup } from '@angular/forms';
 export class AppComponent  {
   ngVersion = 'Angular ' + VERSION.full;
 
+  // dyn-form inputs
+  config = simpleForm;
   form = new FormGroup({});
   mode = 'edit';
 

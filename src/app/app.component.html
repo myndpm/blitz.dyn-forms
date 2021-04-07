@@ -11,7 +11,13 @@
   <main class="container flex-fill">
     <form [formGroup]="form">
 
-      <!--dyn-form [config]="config" [form]="form" [mode]="mode"></dyn-form-->
+      <!-- DYNAMIC FORM STARTS HERE -->
+      <dyn-form
+        [config]="config"
+        [form]="form"
+        [mode]="mode"
+      ></dyn-form>
+      <!-- DYNAMIC FORM ENDS HERE -->
 
       <div class="form-actions">
         <button type="button" mat-raised-button color="primary" (click)="toggleMode()">
