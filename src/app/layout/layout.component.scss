@@ -3,9 +3,11 @@
   width: 100%;
 }
 
-.github-button {
-  margin-left: 4px;
-  margin-top: 4px;
+header .mat-toolbar ::ng-deep {
+  > :not(div) { // .github-button
+    margin-left: 4px;
+    margin-top: 8px;
+  }
 }
 
 main {
