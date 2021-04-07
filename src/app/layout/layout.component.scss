@@ -3,10 +3,29 @@
   width: 100%;
 }
 
-header .mat-toolbar ::ng-deep {
-  > :not(div) { // .github-button
-    margin-left: 4px;
-    margin-top: 8px;
+header .github-button {
+  border-color: rgba(27,31,35,.15);
+  background-color: #e9ebef;
+  background-image: linear-gradient(180deg, #f3f4f6, #e9ebef 90%);
+  color: black !important;
+  font-size: 12px;
+  line-height: 26px;
+  margin-left: 8px;
+
+  &.star {
+    padding: 0 4px;
+  }
+  &.discussions {
+    padding: 0 24px 0 8px;
+  }
+
+  .mat-icon {
+    font-size: 18px;
+    height: 16px;
+    width: 16px;
+
+    line-height: 14px;
+    margin-right: 2px;
   }
 }
 
