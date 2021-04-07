@@ -1,39 +1,22 @@
-<div class="d-flex flex-column">
-  <header>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>auto_awesome_mosaic</mat-icon>
+<app-layout heading="Simple Dynamic Form">
+  <form [formGroup]="form">
+
+    <!-- DYNAMIC FORM STARTS HERE -->
+    <dyn-form
+      [config]="config"
+      [form]="form"
+      [mode]="mode"
+    ></dyn-form>
+    <!-- DYNAMIC FORM ENDS HERE -->
+
+    <div class="form-actions">
+      <button type="button" mat-raised-button color="primary" (click)="toggleMode()">
+        {{ mode === 'edit' ? 'Switch to Display mode' : 'Back to Edit mode' }}
       </button>
-      <span>Simple Dynamic Form</span>
-    </mat-toolbar>
-  </header>
 
-  <main class="container flex-fill">
-    <form [formGroup]="form">
-
-      <!-- DYNAMIC FORM STARTS HERE -->
-      <dyn-form
-        [config]="config"
-        [form]="form"
-        [mode]="mode"
-      ></dyn-form>
-      <!-- DYNAMIC FORM ENDS HERE -->
-
-      <div class="form-actions">
-        <button type="button" mat-raised-button color="primary" (click)="toggleMode()">
-          {{ mode === 'edit' ? 'Switch to Display mode' : 'Back to Edit mode' }}
-        </button>
-
-        <button type="button" mat-raised-button color="accent" (click)="loadData()">
-          Load Data
-        </button>
-      </div>
-    </form>
-  </main>
-
-  <footer>
-    <mat-toolbar class="d-flex flex-column align-items-end">
-      <span>{{ ngVersion }}</span>
-    </mat-toolbar>
-  </footer>
-</div>
+      <button type="button" mat-raised-button color="accent" (click)="loadData()">
+        Load Data
+      </button>
+    </div>
+  </form>
+</app-layout>

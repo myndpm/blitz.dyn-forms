@@ -1,0 +1,20 @@
+<div class="d-flex flex-column">
+  <header>
+    <mat-toolbar color="primary">
+      <button mat-icon-button aria-label="Built with passion!">
+        <mat-icon>auto_awesome_mosaic</mat-icon>
+      </button>
+      <span>{{ heading }}</span>
+    </mat-toolbar>
+  </header>
+
+  <main class="container flex-fill">
+    <ng-content></ng-content>
+  </main>
+
+  <footer>
+    <mat-toolbar class="d-flex flex-column align-items-end">
+      <span>{{ ngVersion }}</span>
+    </mat-toolbar>
+  </footer>
+</div>

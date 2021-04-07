@@ -1,28 +1,12 @@
-/* Layout */
 
-:host div {
-  min-height: 100%;
-  width: 100%;
-}
 
-main {
-  padding: 42px 0;
-
-  .form-actions {
-    margin-top: 1em;
-    > * {
-      margin-right: 12px;
-    }
+.form-actions {
+  margin-top: 1em;
+  > * {
+    margin-right: 12px;
   }
 }
 
-footer .mat-toolbar {
-  font-size: 80%;
-  height: 42px;
-  line-height: 42px;
-}
-
-/* Form */
 ::ng-deep {
   .mat-card {
     margin-bottom: 0.5em;

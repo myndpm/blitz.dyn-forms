@@ -1,13 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule, Routes } from '@angular/router';
 import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
+import { LayoutModule } from '../layout/layout.module';
 import { SimpleComponent } from './simple.component';
 
 const routes: Routes = [
@@ -29,10 +27,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     DynFormsMaterialModule, // STACKBLITZ ONLY
     DynFormsMaterialModule.forFeature(),
-    MatButtonModule,
-    MatIconModule,
     MatSelectModule,
-    MatToolbarModule,
+    LayoutModule,
   ],
   declarations: [
     SimpleComponent,

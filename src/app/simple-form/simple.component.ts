@@ -9,8 +9,6 @@ import { simpleData, simpleForm } from './simple.form';
   styleUrls: ['./simple.component.scss']
 })
 export class SimpleComponent implements AfterViewInit {
-  ngVersion = 'Angular ' + VERSION.full;
-
   // dyn-form inputs
   config = simpleForm;
   form = new FormGroup({});
