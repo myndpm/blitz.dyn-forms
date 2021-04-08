@@ -1,5 +1,5 @@
 import { Validators } from '@angular/forms';
-import { createConfig, DynMatRadioParams, DynMatSelectParams } from '@myndpm/dyn-forms/material';
+import { createMatConfig, DynMatRadioParams, DynMatSelectParams } from '@myndpm/dyn-forms/material';
 import { DynFormConfig } from '@myndpm/dyn-forms';
 
 export const simpleData = {
@@ -29,7 +29,7 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
     display: { readonly: true },
   },
   controls: [
-    createConfig('CARD', {
+    createMatConfig('CARD', {
       name: 'billing',
       factory: { cssClass: 'row' },
       params: {
@@ -37,36 +37,36 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
         subtitle: 'Please fill the required fields',
       },
       controls: [
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'firstName',
           options: { validators: [Validators.required] },
           factory: { cssClass: 'col-sm-6 col-md-4' },
           params: { label: 'First Name *' },
         }),
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'lastName',
           options: { validators: [Validators.required] },
           factory: { cssClass: 'col-sm-6 col-md-4' },
           params: { label: 'Last Name *' },
         }),
-        createConfig('DIVIDER', {
+        createMatConfig('DIVIDER', {
           params: { invisible: true },
         }),
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'address1',
           options: { validators: [Validators.required] },
           factory: { cssClass: 'col-12 col-md-8' },
           params: { label: 'Address Line 1 *' },
         }),
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'address2',
           factory: { cssClass: 'col-12 col-md-8' },
           params: { label: 'Address Line 2' },
         }),
-        createConfig('DIVIDER', {
+        createMatConfig('DIVIDER', {
           params: { invisible: true },
         }),
-        createConfig('SELECT', {
+        createMatConfig('SELECT', {
           name: 'country',
           options: { validators: [Validators.required] },
           factory: { cssClass: 'col-sm-6 col-md-4' },
@@ -93,7 +93,7 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
             },
           },
         }),
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'zipCode',
           options: { validators: [Validators.required, Validators.min(0)] },
           factory: { cssClass: 'col-sm-6 col-md-4' },
@@ -101,7 +101,7 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
         }),
       ],
     }),
-    createConfig('RADIO', {
+    createMatConfig('RADIO', {
       name: 'account',
       params: {
         options: [
@@ -121,7 +121,7 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
         },
       },
     }),
-    createConfig('ARRAY', {
+    createMatConfig('ARRAY', {
       name: 'products',
       factory: { cssClass: 'row' },
       params: {
@@ -130,13 +130,13 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
         initItem: true,
       },
       controls: [
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'product',
           options: { validators: [Validators.required] },
           factory: { cssClass: 'col-6 col-md-8' },
           params: { label: 'Product Name *' },
         }),
-        createConfig('INPUT', {
+        createMatConfig('INPUT', {
           name: 'quantity',
           options: { validators: [Validators.required, Validators.min(1)] },
           factory: { cssClass: 'col-5 col-md-3' },
