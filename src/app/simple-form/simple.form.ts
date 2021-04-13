@@ -1,5 +1,9 @@
 import { Validators } from '@angular/forms';
-import { createMatConfig, DynMatRadioParams, DynMatSelectParams } from '@myndpm/dyn-forms/material';
+import {
+  createMatConfig,
+  DynMatRadioParams,
+  DynMatSelectParams,
+} from '@myndpm/dyn-forms/ui-material';
 import { DynFormConfig } from '@myndpm/dyn-forms';
 
 export const simpleData = {
