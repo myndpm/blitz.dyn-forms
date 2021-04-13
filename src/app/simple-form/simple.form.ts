@@ -3,7 +3,7 @@ import {
   createMatConfig,
   DynMatRadioParams,
   DynMatSelectParams,
-} from '@myndpm/dyn-forms/ui-material';
+} from '@myndpm/dyn-forms/material';
 import { DynFormConfig } from '@myndpm/dyn-forms';
 
 export const simpleData = {
