@@ -1,9 +1,8 @@
-import { Validators } from '@angular/forms';
 import {
   createMatConfig,
   DynMatRadioParams,
   DynMatSelectParams,
-} from '@myndpm/dyn-forms/material';
+} from '@myndpm/dyn-forms/ui-material';
 import { DynFormConfig } from '@myndpm/dyn-forms';
 
 export const simpleData = {
@@ -28,8 +27,9 @@ export const simpleData = {
   ]
 };
 
-export const simpleForm: DynFormConfig<'display'> = { // typed mode
+export const simpleForm: DynFormConfig<'edit'|'display'> = { // typed mode
   modeParams: {
+    edit: { readonly: false },
     display: { readonly: true },
   },
   controls: [
@@ -43,13 +43,13 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
       controls: [
         createMatConfig('INPUT', {
           name: 'firstName',
-          options: { validators: [Validators.required] },
+          options: { validators: ['required'] },
           factory: { cssClass: 'col-sm-6 col-md-4' },
           params: { label: 'First Name *' },
         }),
         createMatConfig('INPUT', {
           name: 'lastName',
-          options: { validators: [Validators.required] },
+          options: { validators: ['required'] },
           factory: { cssClass: 'col-sm-6 col-md-4' },
           params: { label: 'Last Name *' },
         }),
@@ -58,7 +58,7 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
         }),
         createMatConfig('INPUT', {
           name: 'address1',
-          options: { validators: [Validators.required] },
+          options: { validators: { required: null, minLength: 4 } },
           factory: { cssClass: 'col-12 col-md-8' },
           params: { label: 'Address Line 1 *' },
         }),
@@ -72,7 +72,10 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
         }),
         createMatConfig('SELECT', {
           name: 'country',
-          options: { validators: [Validators.required] },
+          options: {
+            defaults: 'CO',
+            validators: ['required'],
+          },
           factory: { cssClass: 'col-sm-6 col-md-4' },
           params: {
             label: 'Country',
@@ -88,20 +91,33 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
           modes: {
             display: {
               control: 'INPUT',
-              params: {
-                getValue: (params: DynMatSelectParams, value: string) => {
-                  const option = params.options.find(o => o.value === value);
-                  return value && option ? option.text : value;
-                },
-              },
+              paramFns: { getValue: 'getOptionText' }
             },
           },
         }),
         createMatConfig('INPUT', {
           name: 'zipCode',
-          options: { validators: [Validators.required, Validators.min(0)] },
+          options: {
+            matchers: [
+              {
+                matcher: 'ENABLE',
+                negate: true,
+                operator: 'AND',
+                when: [
+                  { path: 'firstName', value: 'Mateo' },
+                  { path: 'country', value: 'CO' },
+                ]
+              },
+              {
+                matcher: 'HIDE',
+                when: [
+                  { path: 'account', value: 'GUEST' },
+                ]
+              },
+            ]
+          },
           factory: { cssClass: 'col-sm-6 col-md-4' },
-          params: { label: 'Postal Code *' },
+          params: { label: 'Postal Code' },
         }),
       ],
     }),
@@ -116,12 +132,7 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
       modes: {
         display: {
           control: 'INPUT',
-          params: {
-            getValue: (params: DynMatRadioParams, value: string) => {
-              const option = params.options.find(o => o.value === value);
-              return value && option ? option.text : value;
-            },
-          },
+          paramFns: { getValue: 'getOptionText' }
         },
       },
     }),
@@ -136,13 +147,13 @@ export const simpleForm: DynFormConfig<'display'> = { // typed mode
       controls: [
         createMatConfig('INPUT', {
           name: 'product',
-          options: { validators: [Validators.required] },
+          options: { validators: ['required'] },
           factory: { cssClass: 'col-6 col-md-8' },
           params: { label: 'Product Name *' },
         }),
         createMatConfig('INPUT', {
           name: 'quantity',
-          options: { validators: [Validators.required, Validators.min(1)] },
+          options: { validators: ['required', ['min', 1]] },
           factory: { cssClass: 'col-5 col-md-3' },
           params: { label: 'Quantity *', type: 'number' },
         }),

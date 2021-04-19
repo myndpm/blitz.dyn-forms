@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { RouterModule, Routes } from '@angular/router';
-import { DynFormsMaterialModule } from '@myndpm/dyn-forms/material';
+import { DynFormsMaterialModule } from '@myndpm/dyn-forms/ui-material';
 import { LayoutModule } from '../layout/layout.module';
 import { SimpleComponent } from './simple.component';
 

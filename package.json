@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
-    "@myndpm/dyn-forms": "11.2.7-beta.12",
+    "@myndpm/dyn-forms": "11.2.9-beta.7",
     "rxjs": "6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
